@@ -1,31 +1,46 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 17
-VisualStudioVersion = 17.11.35303.130
-MinimumVisualStudioVersion = 10.0.40219.1
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "lab. rob 2 task 2", "lab. rob 2 task 2.vcxproj", "{9C4350DF-66EA-4392-8B13-606618438904}"
-EndProject
-Global
-	GlobalSection(SolutionConfigurationPlatforms) = preSolution
-		Debug|x64 = Debug|x64
-		Debug|x86 = Debug|x86
-		Release|x64 = Release|x64
-		Release|x86 = Release|x86
-	EndGlobalSection
-	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{9C4350DF-66EA-4392-8B13-606618438904}.Debug|x64.ActiveCfg = Debug|x64
-		{9C4350DF-66EA-4392-8B13-606618438904}.Debug|x64.Build.0 = Debug|x64
-		{9C4350DF-66EA-4392-8B13-606618438904}.Debug|x86.ActiveCfg = Debug|Win32
-		{9C4350DF-66EA-4392-8B13-606618438904}.Debug|x86.Build.0 = Debug|Win32
-		{9C4350DF-66EA-4392-8B13-606618438904}.Release|x64.ActiveCfg = Release|x64
-		{9C4350DF-66EA-4392-8B13-606618438904}.Release|x64.Build.0 = Release|x64
-		{9C4350DF-66EA-4392-8B13-606618438904}.Release|x86.ActiveCfg = Release|Win32
-		{9C4350DF-66EA-4392-8B13-606618438904}.Release|x86.Build.0 = Release|Win32
-	EndGlobalSection
-	GlobalSection(SolutionProperties) = preSolution
-		HideSolutionNode = FALSE
-	EndGlobalSection
-	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {424BA9E1-F6F4-43CC-9990-7D10E1E921C9}
-	EndGlobalSection
-EndGlobal
+#include <iostream>
+
+int main() {
+    setlocale(0, ".1251");
+    int year1, year2;
+
+    while (true) {
+        std::cout << "Введiть перший рiк: ";
+        std::cin >> year1;
+        std::cout << "Введiть другий рiк: ";
+        std::cin >> year2;
+
+        if (year1 > 0 && year2 > 0 && year1 <= year2) {
+            break; 
+        }
+        else {
+            std::cout << "Помилка: Введiть правильнi значення. Перший рiк повинен бути меншим або рiвним другому.\n";
+        }
+    }
+
+    std::cout << "Перший рiк: " << year1 << "\n";
+    std::cout << "Другий рiк: " << year2 << "\n";
+
+    int years_passed = 0;
+    int count_every_tenth = 0;
+
+    for (int year = year1; year <= year2; ++year) {
+        years_passed++;
+
+        if (years_passed > 100) {
+            std::cout << "Кiлькiсть рокiв бiльше 100. Вихiд iз циклу.\n";
+            break;
+        }
+
+        if ((year - year1 + 1) % 10 == 0) {
+            count_every_tenth++;
+        }
+    }
+
+    std::cout << "Кiлькiсть рокiв мiж " << year1 << " та " << year2 << ": " << years_passed << "\n";
+    std::cout << "Кiлькiсть кожних десятих рокiв: " << count_every_tenth << "\n";
+
+    return 0;
+}
+
