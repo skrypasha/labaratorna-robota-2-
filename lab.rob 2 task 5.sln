@@ -1,31 +1,20 @@
-﻿
-Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 17
-VisualStudioVersion = 17.11.35303.130
-MinimumVisualStudioVersion = 10.0.40219.1
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "lab.rob 2 task 5", "lab.rob 2 task 5.vcxproj", "{68761B89-C885-42B0-B893-B3252A42D73E}"
-EndProject
-Global
-	GlobalSection(SolutionConfigurationPlatforms) = preSolution
-		Debug|x64 = Debug|x64
-		Debug|x86 = Debug|x86
-		Release|x64 = Release|x64
-		Release|x86 = Release|x86
-	EndGlobalSection
-	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{68761B89-C885-42B0-B893-B3252A42D73E}.Debug|x64.ActiveCfg = Debug|x64
-		{68761B89-C885-42B0-B893-B3252A42D73E}.Debug|x64.Build.0 = Debug|x64
-		{68761B89-C885-42B0-B893-B3252A42D73E}.Debug|x86.ActiveCfg = Debug|Win32
-		{68761B89-C885-42B0-B893-B3252A42D73E}.Debug|x86.Build.0 = Debug|Win32
-		{68761B89-C885-42B0-B893-B3252A42D73E}.Release|x64.ActiveCfg = Release|x64
-		{68761B89-C885-42B0-B893-B3252A42D73E}.Release|x64.Build.0 = Release|x64
-		{68761B89-C885-42B0-B893-B3252A42D73E}.Release|x86.ActiveCfg = Release|Win32
-		{68761B89-C885-42B0-B893-B3252A42D73E}.Release|x86.Build.0 = Release|Win32
-	EndGlobalSection
-	GlobalSection(SolutionProperties) = preSolution
-		HideSolutionNode = FALSE
-	EndGlobalSection
-	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {7D243454-4A09-41E0-936D-7FD333B2BBE5}
-	EndGlobalSection
-EndGlobal
+#include <iostream>
+
+int main() {
+    setlocale(0, ".1251");
+    int a, b;
+
+    std::cout << "Введiть перше число: ";
+    std::cin >> a;
+    std::cout << "Введiть друге число: ";
+    std::cin >> b;
+
+    std::cout << "Адреса першої змiнної: " << &a << std::endl;
+    std::cout << "Адреса другої змiнної: " << &b << std::endl;
+
+    for (int i = a; i <= b; ++i) {
+        std::cout << -i << std::endl;
+    }
+
+    return 0;
+}
